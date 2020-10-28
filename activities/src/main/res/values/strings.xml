@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">activities</string>
+    <string name="click">Cliquez moi</string>
+    <string name="nombre_1">Nombre 1</string>
+    <string name="nombre_2">Nombre 2</string>
+    <string name="calculer">Calculer</string>
+</resources>
