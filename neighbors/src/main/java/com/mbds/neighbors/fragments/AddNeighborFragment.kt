@@ -14,7 +14,7 @@ import com.mbds.neighbors.data.NeighborRepository
 import com.mbds.neighbors.data.service.DummyNeighborApiService
 import com.mbds.neighbors.models.Neighbor
 
-class AddNeighborFragment: Fragment() {
+class AddNeighborFragment : Fragment() {
     private lateinit var btnSave: Button
 
     private lateinit var nameTextEdit: EditText
@@ -23,6 +23,7 @@ class AddNeighborFragment: Fragment() {
     private lateinit var phoneNumberTextEdit: EditText
     private lateinit var aboutMeTextEdit: EditText
     private lateinit var webSiteTextEdit: EditText
+
     /**
      * Fonction permettant de définir une vue à attacher à un fragment
      */
@@ -32,6 +33,11 @@ class AddNeighborFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.add_neighbor, container, false)
+
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.add_neighbor)
+        }
+
         btnSave = view.findViewById(R.id.btnSave)
 
         nameTextEdit = view.findViewById(R.id.name)
@@ -60,10 +66,7 @@ class AddNeighborFragment: Fragment() {
 
             NeighborRepository.getInstance().createNeighbour(neighbor)
 
-            (activity as? NavigationListener)?.let {
-                activity?.onBackPressed()
-                it.updateTitle(R.string.addNeighbor)
-            }
+            activity?.onBackPressed()
         }
     }
 }

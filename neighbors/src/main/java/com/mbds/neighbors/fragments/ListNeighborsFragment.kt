@@ -39,6 +39,7 @@ class ListNeighborsFragment : Fragment(), ListNeighborsHandler {
             )
         )
         addNeighbor = view.findViewById(R.id.addNeighbor)
+
         return view
     }
 
@@ -51,9 +52,13 @@ class ListNeighborsFragment : Fragment(), ListNeighborsHandler {
         addNeighbor.setOnClickListener {
             (activity as? NavigationListener)?.let {
                 it.showFragment(AddNeighborFragment())
-                it.updateTitle(R.string.listNeighbor)
             }
         }
+
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.list_neighbor)
+        }
+
     }
 
     override fun onDeleteNeighbor(neighbor: Neighbor) {

@@ -12,6 +12,6 @@
     <string name="hint_favorite">Favorite</string>
     <string name="hint_save">Save</string>
 
-    <string name="addNeighbor">Nouveau voisin</string>
-    <string name="listNeighbor">Liste des voisins</string>
+    <string name="add_neighbor">Nouveau voisin</string>
+    <string name="list_neighbor">Liste des voisins</string>
 </resources>
