@@ -49,16 +49,15 @@ class ListNeighborsFragment : Fragment(), ListNeighborsHandler {
         val adapter = ListNeighborsAdapter(neighbors, this)
         recyclerView.adapter = adapter
 
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.list_neighbor)
+        }
+
         addNeighbor.setOnClickListener {
             (activity as? NavigationListener)?.let {
                 it.showFragment(AddNeighborFragment())
             }
         }
-
-        (activity as? NavigationListener)?.let {
-            it.updateTitle(R.string.list_neighbor)
-        }
-
     }
 
     override fun onDeleteNeighbor(neighbor: Neighbor) {

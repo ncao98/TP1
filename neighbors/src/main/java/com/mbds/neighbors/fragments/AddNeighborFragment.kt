@@ -34,10 +34,6 @@ class AddNeighborFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.add_neighbor, container, false)
 
-        (activity as? NavigationListener)?.let {
-            it.updateTitle(R.string.add_neighbor)
-        }
-
         btnSave = view.findViewById(R.id.btnSave)
 
         nameTextEdit = view.findViewById(R.id.name)
@@ -51,6 +47,10 @@ class AddNeighborFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.add_neighbor)
+        }
 
         btnSave.setOnClickListener {
             val neighbor = Neighbor(
