@@ -1,20 +1,21 @@
 package com.mbds.neighbors.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
-import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.mbds.neighbors.NavigationListener
 import com.mbds.neighbors.R
 import com.mbds.neighbors.data.NeighborRepository
-import com.mbds.neighbors.data.service.DummyNeighborApiService
 import com.mbds.neighbors.models.Neighbor
 
-class AddNeighborFragment : Fragment() {
+class AddNeighborFragment : Fragment(), TextWatcher {
     private lateinit var btnSave: Button
 
     private lateinit var nameTextEdit: EditText
@@ -23,6 +24,7 @@ class AddNeighborFragment : Fragment() {
     private lateinit var phoneNumberTextEdit: EditText
     private lateinit var aboutMeTextEdit: EditText
     private lateinit var webSiteTextEdit: EditText
+    private lateinit var phoneLyt: TextInputLayout
 
     /**
      * Fonction permettant de définir une vue à attacher à un fragment
@@ -42,6 +44,17 @@ class AddNeighborFragment : Fragment() {
         phoneNumberTextEdit = view.findViewById(R.id.phone)
         aboutMeTextEdit = view.findViewById(R.id.about)
         webSiteTextEdit = view.findViewById(R.id.website)
+        phoneLyt = view.findViewById(R.id.phoneLyt)
+
+        nameTextEdit.addTextChangedListener(this)
+        avatarUrlTextEdit.addTextChangedListener(this)
+        addressTextEdit.addTextChangedListener(this)
+        phoneNumberTextEdit.addTextChangedListener(this)
+        aboutMeTextEdit.addTextChangedListener(this)
+        webSiteTextEdit.addTextChangedListener(this)
+
+        btnSave.isEnabled = false
+
         return view
     }
 
@@ -68,5 +81,25 @@ class AddNeighborFragment : Fragment() {
 
             activity?.onBackPressed()
         }
+    }
+
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+    }
+
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        btnSave.isEnabled =
+            nameTextEdit.text.isNotBlank() && avatarUrlTextEdit.text.isNotEmpty() && addressTextEdit.text.isNotEmpty() && webSiteTextEdit.text.isNotEmpty() && phoneNumberTextEdit.text.isNotEmpty() && aboutMeTextEdit.text.isNotEmpty()
+    }
+
+    override fun afterTextChanged(s: Editable?) {
+        with(phoneNumberTextEdit.text.toString()) {
+            if ((startsWith("06") || startsWith("07")) && length == 10) {
+                phoneLyt.error = null
+            } else {
+                phoneLyt.error = getString(R.string.phone_error)
+            }
+        }
+
     }
 }

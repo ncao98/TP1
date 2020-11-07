@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Voisins</string>
 
@@ -14,4 +15,12 @@
 
     <string name="add_neighbor">Nouveau voisin</string>
     <string name="list_neighbor">Liste des voisins</string>
+
+    <string name="name_description_icon">Icône Nom</string>
+    <string name="add_a_photo_description_icon">Icône Avatar</string>
+    <string name="phone_description_icon">Icône Téléphone</string>
+    <string name="website_description_icon">Icône Website</string>
+    <string name="address_description_icon">Icône Adresse</string>
+
+    <string name="phone_error">Erreur numéro de téléphone</string>
 </resources>

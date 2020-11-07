@@ -7,128 +7,145 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="401dp"
+        tools:layout_editor_absoluteY="95dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/avatarLyt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="106dp"
-                android:contentDescription="@string/person_icon"
-                app:srcCompat="@drawable/ic_baseline_person_outline_24" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameLyt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/avatarLyt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/hint_name"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="10dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/imageLyt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="106dp"
+                    android:contentDescription="@string/person_icon"
+                    app:srcCompat="@drawable/ic_baseline_person_outline_24" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/image"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLyt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconDrawable="@drawable/ic_baseline_person_24"
+                app:startIconContentDescription="@string/name_description_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/hint_avatar"
-                android:inputType="textUri" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="10dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/phoneLyt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hint_name"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phone"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/imageLyt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconDrawable="@drawable/ic_baseline_add_a_photo_24"
+                app:startIconContentDescription="@string/add_a_photo_description_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/hint_phone"
-                android:inputType="phone" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="10dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/websiteLyt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hint_avatar"
+                    android:inputType="textUri" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/website"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneLyt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconDrawable="@drawable/ic_baseline_phone_24"
+                app:startIconContentDescription="@string/phone_description_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/hint_website"
-                android:inputType="textUri" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="10dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/addressLyt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hint_phone"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/websiteLyt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconDrawable="@drawable/ic_baseline_web_24"
+                app:startIconContentDescription="@string/website_description_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/hint_address"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="10dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/aboutLyt"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hint_website"
+                    android:inputType="textUri" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/about"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressLyt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconDrawable="@drawable/ic_baseline_home_24"
+                app:startIconContentDescription="@string/address_description_icon"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:ems="10"
-                android:hint="@string/hint_about"
-                android:inputType="text|textMultiLine" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/hint_save"
-            android:layout_marginTop="10dp"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hint_address"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/aboutLyt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/about"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:ems="10"
+                    android:hint="@string/hint_about"
+                    android:inputType="text|textMultiLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/hint_save" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

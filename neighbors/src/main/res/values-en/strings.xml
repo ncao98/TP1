@@ -15,4 +15,12 @@
 
     <string name="add_neighbor">New neighbor</string>
     <string name="list_neighbor">Neighbors list</string>
+
+    <string name="name_description_icon">Name icon</string>
+    <string name="add_a_photo_description_icon">Avatar icon</string>
+    <string name="phone_description_icon">Phone icon</string>
+    <string name="website_description_icon">Website icon</string>
+    <string name="address_description_icon">Address icon</string>
+
+    <string name="phone_error">Phone error</string>
 </resources>
